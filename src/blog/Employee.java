@@ -1,5 +1,9 @@
 package blog;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Employee {
 	private String name;
 	private int age;
@@ -37,6 +41,12 @@ public class Employee {
 
 	public void setLocation(String location) {
 		this.location = location;
+	}
+	
+	public void findEmployeeByName(ArrayList<Employee> list) {
+		list.stream()
+		.filter(currentEmp -> currentEmp.getName().equals("Jen Luvs-Reviews"))
+		.collect(Collectors.toList());
 	}
 
 }
